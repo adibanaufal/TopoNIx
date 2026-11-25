@@ -1,0 +1,93 @@
+/* ==========================================================================
+   TopoNix SMKN 1 Bojonegoro — Custom Simulator & Canvas Styles
+   (Digunakan bersama Tailwind CSS CDN)
+   ========================================================================== */
+
+:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 2px;
+}
+
+.auth-grid-bg {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.sim-canvas-grid {
+  background-color: #0b1220;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.sim-link {
+  stroke: #38bdf8;
+  stroke-width: 3;
+  cursor: pointer;
+  transition: stroke 0.15s ease, stroke-width 0.15s ease;
+}
+
+.sim-link.backbone {
+  stroke: #f59e0b;
+  stroke-width: 5;
+}
+
+.sim-link.broken {
+  stroke: #ef4444;
+  stroke-dasharray: 6 6;
+  opacity: 0.85;
+}
+
+.sim-link:hover {
+  stroke-width: 5;
+}
+
+.sim-node {
+  cursor: move;
+}
+
+.sim-node-box {
+  fill: #1e293b;
+  stroke: #38bdf8;
+  stroke-width: 2;
+  rx: 10;
+}
+
+.sim-node.selected .sim-node-box {
+  stroke: #facc15;
+  stroke-width: 3;
+}
+
+.sim-node.offline .sim-node-box {
+  fill: #450a0a;
+  stroke: #ef4444;
+  stroke-dasharray: 4 3;
+}
+
+.sim-node-label {
+  fill: #f8fafc;
+  font-size: 13px;
+  font-weight: 700;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.sim-node-sub {
+  fill: #cbd5e1;
+  font-size: 10px;
+  font-weight: 600;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.toast-enter {
+  animation: slideIn 0.2s ease;
+}
